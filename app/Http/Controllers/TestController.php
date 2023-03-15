@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\TestPostRequest;
 
+
 class TestController extends Controller
 {
     /**
@@ -25,10 +26,13 @@ class TestController extends Controller
      */
     public function input(TestPostRequest $request)
     {
-        //データの取得＋validate
-        $validatedData = $request->validate();
-        
-        var_dump($validatedData); exit;
+        // validate済
+
+        // データの取得
+        $validatedData = $request->validated();
+
+        //
+        //var_dump($validatedData); exit;
         
         return view('test.input', ['datum' => $validatedData]);
     }
