@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class TestController extends Controller
+class AuthController extends Controller
 {
     /**
      * トップページ を表示する

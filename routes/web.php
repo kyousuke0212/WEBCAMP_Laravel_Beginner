@@ -16,11 +16,15 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // タスク管理システム
 Route::get('/', [AuthController::class, 'index']);
 Route::get('/task/list', [TaskController::class, 'list']);
 
+
 // テスト用
 Route::get('/welcome', [WelcomeController::class, 'index']);
 Route::get('/welcome/second', [WelcomeController::class, 'second']);
-Route::post('/test', [TestController::class, 'index']);
+// form入力テスト用
+Route::get('/test', [TestController::class, 'index']);
+Route::post('/test/input', [TestController::class, 'input']);

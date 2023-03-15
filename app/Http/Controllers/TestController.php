@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\TestPostRequest;
 
 class TestController extends Controller
 {
@@ -12,23 +13,23 @@ class TestController extends Controller
      * 
      * @return \Illuminate\View\View
      */
-     
-     public function index()
+    public function index()
     {
         return view('test.index');
     }
+
     /**
      * 入力を受け取る
      * 
      * @return \Illuminate\View\View
      */
-    public function input(Request $request)
+    public function input(TestPostRequest $request)
     {
+        //データの取得＋validate
+        $validatedData = $request->validate();
         
-        $email = $request->input('email');
-        $pass = $request->input('password');
-        var_dump($email, $pass); exit;
+        var_dump($validatedData); exit;
         
-        return view('test.input');
+        return view('test.input', ['datum' => $validatedData]);
     }
 }
