@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password', 255);
             $table->rememberToken();
             //$table->timestamps();
-            $table->datetime('created_at')->useCurrent();
-            $table->datetime('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at')->useCurrent()->useCurrentOnUpdate();
+            //
             $table->collation = 'utf8mb4_bin';
         });
     }

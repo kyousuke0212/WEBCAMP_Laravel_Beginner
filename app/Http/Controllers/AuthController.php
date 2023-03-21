@@ -2,8 +2,8 @@
 declare(strict_types=1);
 namespace App\Http\Controllers;
 
-use app\Http\Controllers\Controller;
-use app\Http\Requests\LoginPostRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginPostRequest;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
