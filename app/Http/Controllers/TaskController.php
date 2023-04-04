@@ -46,6 +46,9 @@ var_dump($r); exit;
      */
     public function list()
     {
-        return view('task.list');
+        $list = TaskModel::where('user_id',Auth::id())->get();
+        //$sql = TaskModel::where('user_id', Auth::id())->toSql();
+        //echo "<pre>\n"; var_dump($sql,$list); exit;
+        return view('task.list', ['list' => $list]);
     }
 }
