@@ -21,4 +21,4 @@ class TaskRegisterPostRequest extends FormRequest
             'detail' => ['max:65535'],
             'priority' => ['required', 'numeric', Rule::in( array_keys(TaskModel::PRIORITY_VALUE) ) ],
         ];
-    }
+    }}
